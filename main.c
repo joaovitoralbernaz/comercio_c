@@ -1,13 +1,13 @@
 #include <stdio.h>
-
+struct produtos{
+    char nome[15];
+    float preco;
+};
 // Variáveis globais
 int rec = 0;
 int des = 0;
 int n;
-struct produtos{
-    char nome[15];
-    float preco;
-}
+
 
 // Declaração de funções
 
@@ -28,6 +28,7 @@ void controle_estoque(){
     for( int i = 0; i < n ; i++ ){
         printf("Digite o %dº produto:\n " , (i + 1));
         scanf(" %s" , &estoque[i].nome);
+        getchar();
         printf("Digite o preço do %d° produto:\n " , (i + 1));
         scanf("%f" , &estoque[i].preco);
     }
@@ -43,8 +44,8 @@ void controle_vendas() {
     do {
         printf("\n---------------------------------------------\n");
         printf("VENDAS\n");
-        for(int i = 0; i < n, i++){
-             printf("301 - %s -- %f\n" , &estoque[i].nome , &estoque[i].preco);
+        for(int i = 0; i < n; i++){
+             printf("301 - %s -- %f\n" , estoque[i].nome , estoque[i].preco);
         }
         printf("Escolha um código de produto: ");
         scanf("%d", &escolha_3);
@@ -203,9 +204,6 @@ int main() {
     menu_principal();
     return 0;
     
-    struct produtos{
-    char nome[15];
-    float preco;
-};
+
 
 }
